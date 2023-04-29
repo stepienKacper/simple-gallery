@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    /* outline: 4px dashed red; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    float: left;
+    background: rgb(150, 150, 150);
+}
+
+.gallery {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: -2px;
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+    float: left;
+    margin: 15px;
+    filter: blur(2px);
+    filter: brightness(40%);
+    transition: filter 2s, transform 1.2s, margin 1.2s;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 5px 5px 25px 5px #000000;
+}
+
+.photo>p {
+    text-align: center;
+    display: block;
+}
+
+img {
+    width: 350px;
+    height: 350px;
+    object-fit:fill;
+}
+
+.photo:hover {
+    z-index: 998;
+    transform: scale(120%);
+    filter: blur(0px);
+    filter: brightness(100%);
+    cursor: pointer;
+    margin: 25px;
+}
+
+
+nav {
+    position: fixed;
+    bottom: 15px;
+    /* z-index: 999; */
+}
+
+@media only screen and (max-width: 750px) {
+    .gallery {
+        height: 240vh;
+    }
+    .photo {
+        margin: 0;
+    }
+    .photo:hover {
+        transform: scale(105%);
+        margin: 0;
+    }
+
+    nav {
+        background: #ffffff33;
+        z-index: 999;
+    }
+  }
